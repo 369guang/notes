@@ -1,0 +1,13 @@
+cd dir1
+
+find ./ -type f -exec md5sum {} \; | sort -k 2  > logdir/dir1.txt
+
+
+cd dir2
+
+find ./ -type f -exec md5sum {} \; | sort -k 2  > logdir/dir2.txt
+
+
+cd logdir
+
+diff dir1.txt dir2.txt
