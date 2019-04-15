@@ -87,3 +87,8 @@
 
     /bin/rm -rf /var/log/mongodb
     /bin/rm -rf /var/lib/mongo
+
+
+三、关于集群
+    非常详细
+    https://www.cnblogs.com/clsn/p/8214345.html#auto_id_0
