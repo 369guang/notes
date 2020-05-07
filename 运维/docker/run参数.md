@@ -1,6 +1,6 @@
 
 run 命令
-
+```shell
 命令格式：docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
    Usage: Run a command in a new container
 中文意思为：通过run命令创建一个新的容器（container）
@@ -45,7 +45,7 @@ run 命令
         always：容器退出时总是重启
     --rm=false， 指定容器停止后自动删除容器(不支持以docker run -d启动的容器)
     --sig-proxy=true， 设置由代理接受并处理信号，但是SIGCHLD、SIGSTOP和SIGKILL不能被代理
-
+```
 示例
 
 运行一个在后台执行的容器，同时，还能用控制台管理：docker run -i -t -d ubuntu:latest

@@ -1,5 +1,5 @@
-#引用 https://github.com/uber-go/guide
-#引用中文翻译 https://github.com/xxjwxc/uber_go_guide_cn
+# 引用 https://github.com/uber-go/guide
+# 引用中文翻译 https://github.com/xxjwxc/uber_go_guide_cn
 
 <!--
 

@@ -1,5 +1,5 @@
 参考1
-1、net.ipv4.tcp_mem = 196608       262144  393216
+1. net.ipv4.tcp_mem = 196608       262144  393216
 
   第一个数字表示，当 tcp 使用的 page 少于 196608 时，kernel 不对其进行任何的干预
 
@@ -12,7 +12,7 @@
   net.ipv4.tcp_mem = 524288     699050  1048576  （TCP连接最多约使用4GB内存）
 
 
-2、net.ipv4.tcp_rmem 和 net.ipv4.tcp_wmem
+2. net.ipv4.tcp_rmem 和 net.ipv4.tcp_wmem
 
 为每个TCP连接分配的读、写缓冲区内存大小，单位是Byte
 
@@ -58,28 +58,28 @@ net.ipv4.tcp_retries2
 
 活动TCP连接重传次数，超过次数视为掉线，放弃连接。缺省值：15，建议设为 2或者3.
 
-# TCP三次握手的syn/ack阶段，重试次数，缺省5，设为2-3
+### TCP三次握手的syn/ack阶段，重试次数，缺省5，设为2-3
 net.ipv4.tcp_synack_retries
 
-# FIN_WAIT状态的TCP连接的超时时间
+### FIN_WAIT状态的TCP连接的超时时间
 net.ipv4.tcp_fin_timeout = 30
 
-# TIME_WAIT状态的socket快速回收，循环使用
+### TIME_WAIT状态的socket快速回收，循环使用
 net.ipv4.tcp_tw_reuse = 1
 
 net.ipv4.tcp_tw_recycle = 1
 
-# TCP连接SYN队列大小
+### TCP连接SYN队列大小
 net.ipv4.tcp_max_syn_backlog = 4096
 
-# 网络设备的收发包的队列大小
+### 网络设备的收发包的队列大小
 net.core.netdev_max_backlog = 2048
 
-# TCP SYN Cookies，防范DDOS攻击，防止SYN队列被占满
+### TCP SYN Cookies，防范DDOS攻击，防止SYN队列被占满
 net.ipv4.tcp_syncookies = 1
 
 
- 
+
 
 参考文献：
 
@@ -89,11 +89,10 @@ http://blog.tsunanet.net/2011/03/out-of-socket-memory.html
 
 http://rdc.taobao.com/blog/cs/?p=1062
 
-https://blog.csdn.net/JackLiu16/article/details/80169030
 
 
 参考2
-
+```shell
 net.ipv4.tcp_mem = 3097431 4129911 6194862
 net.ipv4.tcp_rmem = 4096 87380 6291456
 net.ipv4.tcp_wmem = 4096 65536 4194304
@@ -106,11 +105,4 @@ net.ipv4.ip_local_port_range = 1024 65535
 net.ipv4.tcp_max_syn_backlog = 65535
 net.core.somaxconn  = 65535
 net.core.netdev_max_backlog  = 200000
-
-
-参考3
-/etc/security/limits.conf
-* soft nproc 11000
-* hard nproc 11000
-* soft nofile 655350
-* hard nofile 655350
+```
