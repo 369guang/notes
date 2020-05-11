@@ -7,13 +7,13 @@
 #### 1. 添加源
 
 ```shell
-cat /etc/yum.repos.d/influxdb.repo <<EOF
+cat <<EOF > /etc/yum.repos.d/influxdb.repo 
 [influxdb]
-  name = InfluxDB Repository - RHEL \$releasever
-  baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
-  enabled = 1
-  gpgcheck = 1
-  gpgkey = https://repos.influxdata.com/influxdb.key
+name = InfluxDB Repository - RHEL \$releasever
+baseurl = https://repos.influxdata.com/rhel/\$releasever/\$basearch/stable
+enabled = 1
+gpgcheck = 1
+gpgkey = https://repos.influxdata.com/influxdb.key
 EOF
 ```
 
