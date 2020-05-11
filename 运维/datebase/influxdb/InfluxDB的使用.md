@@ -1,3 +1,5 @@
+
+
 # InfluxDB时序数据库的使用
 
 -----
@@ -18,7 +20,7 @@
 
 #### 	(1). 创建数据库
 
-​			`create database game_ops`
+`create database game_ops`
 
 #### 	(2). 查看所有数据库
 
@@ -80,11 +82,15 @@
 
 #### (3). 修改RP
 
-	>ALTER RETENTION POLICY "rp_name" ON "db_name" DURATION 3w DEFAULT
+```mysql
+ALTER RETENTION POLICY "rp_name" ON "db_name" DURATION 3w DEFAULT
+```
 
 #### (4). 删除RP
 
-	>​	DROP RETENTION POLICY "rp_name" on "db_name"
+```mysql
+DROP RETENTION POLICY "rp_name" on "db_name"
+```
 
 ----
 
@@ -94,13 +100,13 @@
 
 #### 	(1). 当前数据库的CQ
 
-	```bash
-	SHOW CONTINUOUS QUERIES
-	```
+```sql
+SHOW CONTINUOUS QUERIES
+```
 
 #### 	(2). 创建新的CQ
 
-	`create continuous query cq_30m on game_ops BEGIN SELECT mean(cpu) INTO game30m FROM game GROUP BY TIME(5m) END`
+	create continuous query cq_30m on game_ops BEGIN SELECT mean(cpu) INTO game30m FROM game GROUP BY TIME(5m) END`
 	
 	##### 1. cq_30m： 连续查询的名字
 	
@@ -113,7 +119,7 @@
 	##### 5. game30m： 存新数据的表名
 	
 	##### 6. 30m：时间间隔为30分钟
-
+	
 		>```bash
 		>> SHOW MEASUREMENTS
 		>name: measurements
