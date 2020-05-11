@@ -52,3 +52,28 @@ vim /etc/telegraf/telegraf.conf
 
 
 
+#### 4.重启
+
+##### centos 6
+
+```sh
+sudo service telegraf restart
+```
+
+##### centos 7
+
+```sh
+sudo systemctl restart telegraf
+```
+
+
+
+## 对influxDB的配置
+
+##### 创建用户
+
+```sh
+create user "telegraf" with password 'metricsmetricsmetricsmetrics'
+create database telegraf
+```
+
