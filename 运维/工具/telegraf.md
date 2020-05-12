@@ -17,7 +17,7 @@ gpgkey = https://repos.influxdata.com/influxdb.key
 EOF
 ```
 
-#### 
+
 
 #### 2. 安装
 
